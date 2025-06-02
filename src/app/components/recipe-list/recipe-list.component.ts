@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RecipeService } from '../../services/recipe.service';
+import { HeaderComponent } from '../header/header.component';
 
 interface Recipe {
   _id: string;
@@ -15,7 +16,7 @@ interface Recipe {
 @Component({
   selector: 'app-recipe-list',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HeaderComponent],
   templateUrl: './recipe-list.component.html',
   styleUrls: ["./recipe-list.component.css"] 
 })
