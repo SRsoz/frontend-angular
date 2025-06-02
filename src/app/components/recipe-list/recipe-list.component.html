@@ -1,1 +1,35 @@
-<p>recipe-list works!</p>
+<section class="hero">
+  <h1>Welcome to Yummies!</h1>
+  <p>
+    Here you can create recipes and overview others beautiful creations.
+  </p>
+</section>
+
+<section class="latest-recipes">
+  <div class="header">
+    <h2>All recipes</h2>
+    <input
+      type="text"
+      placeholder="Search specific recipe"
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+    >
+  </div>
+    <div>
+
+    @if (!recipes) {
+      <p>
+        No recipes found
+      </p>
+    }
+    <div id="recipeContainer" class="recipes-grid">
+      @for (recipe of filteredRecipes; track recipe._id) {
+        <div class="recipes-card">
+         <h3>{{ recipe.title }}</h3>
+        <p>Ingredients: {{ recipe.ingredients.join(', ') }}</p>
+        <p>Instructions: {{ recipe.instructions }}</p>
+        </div>
+        }
+      </div>
+      </div>
+</section>

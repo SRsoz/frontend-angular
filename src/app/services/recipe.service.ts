@@ -8,13 +8,13 @@ import { Recipe } from '../models/recipe.model';
 })
 
 export class RecipeService {
-  private apiUrl = 'http://localhost:5000/api/recipes';
+  private apiUrl = 'http://localhost:3000/api/recipes';
 
   constructor(private http: HttpClient) {}
 
 // Get all recipes
   getRecipes(): Observable<Recipe[]> {
-   return this.http.get<Recipe[]>(this.apiUrl);
+   return  this.http.get<Recipe[]>(`${this.apiUrl}`);
   }
 
   // Get specific recipe
